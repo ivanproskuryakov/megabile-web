@@ -1,0 +1,56 @@
+{% extends "FOSUserBundle::layout.html.twig" %}
+
+{% block fos_user_content %}
+{% if error %}
+    <br/>
+    <p class="alert error"><strong>Error</strong> <span>- {{ error|trans({}, 'FOSUserBundle') }}</span></p>
+{% endif %}
+    
+<section id="title" class="container clearfix">
+    <div class="ten columns">
+
+        <h1>Login page</h1>
+        <h2>Enter your username and password and press the Login button. In case you don't have an account, press the Register button and complete simple registration procedure.</h2>
+
+    </div>
+</section>
+
+<section id="title" class="container clearfix">
+    <div class="two-thirds column">
+        <form class="widthform" action="{{ path("fos_user_security_check") }}" method="post">
+
+
+            <fieldset>
+                <input type="hidden" name="_csrf_token" value="{{ csrf_token }}" />
+
+                <label for="username">{{ 'security.login.username'|trans({}, 'FOSUserBundle') }}</label>
+                <input type="text" id="username" name="_username" value="{{ last_username }}" required="required" />
+
+                <label for="password">{{ 'security.login.password'|trans({}, 'FOSUserBundle') }}</label>
+                <input type="password" id="password" name="_password" required="required" />
+
+                <input type="checkbox" id="remember_me" name="_remember_me" value="on" />
+                <label for="remember_me">{{ 'security.login.remember_me'|trans({}, 'FOSUserBundle') }}</label>
+            </fieldset>
+            <div class="form-click">
+                <input type="submit" id="_submit" name="_submit" value="{{ 'security.login.submit'|trans({}, 'FOSUserBundle') }}" />
+            </div>        
+        </form>
+        <a href="{{ path('fos_user_resetting_request') }}"> Forgot password ?</a>            
+        <!-- End Form -->
+        <div id="alert"></div>
+    </div>
+
+    <div class="one-third column">
+        <div id="infobox" class="four columns clearfix">
+            <div class="infobox">
+                Do not have an account? Just register! Just three clicks an you will complete creating your Megabile account!<br/>
+                <a class="button" href="{{asset('/register')}}">Register!</a>
+            </div>
+
+        </div>        
+    </div>    
+</section>
+
+    
+{% endblock fos_user_content %}

@@ -1,0 +1,49 @@
+{% extends '::base.html.twig' %}
+{% block body %}
+<section id="title" class="container clearfix">
+
+
+    <div class="twelve columns">
+
+        <h1>Mobile Store Apps !</h1>
+        <h2>Cheap iPhone and Android apps for your current store. Simple as make a coffe!</h2>
+
+    </div>
+
+
+</section>
+
+<section id="team" class="container clearfix">
+
+
+    <ul class="members">
+        
+        <li class="first one-third column">
+            <img src="images/android.png" width="228px" alt="Google Android">
+            <h2>Google Android</h2>
+            <a href="{{ path('_magazento_demo_android') }}">this summer...</a>
+            <p>Thinking about Android App for your store? Megabile makes creating Android Apps easier than ever before! Create your App and get all benefits. </p>
+
+        </li>
+        
+        <li class="one-third column">
+            <img src="images/about2.png" alt="Apple Iphone">
+            <h2>Apple iPhone</h2>
+            <a href="{{ path('_magazento_demo_iphone') }}">view demo...</a>
+            <p>Magento.Mobile for iPhone is the most functional App for your existing store. 
+                We'll take care of all the coding so that you can just focus on marketing and products!</p>                                
+        </li>
+
+        <li class="one-third column">
+            <img src="images/about3.png" alt="Magento">
+            <h2>Your Store</h2>
+            <a href="{{ path('_magazento_howitworks') }}">read how...</a>
+            <p>Connect your existing store to Megabile. It is really easy, simply upload your products XML with our ready made extension. No coding needed!</p>
+        </li>
+
+    </ul>
+
+
+</section>
+
+{% endblock %}

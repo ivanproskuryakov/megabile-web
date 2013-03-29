@@ -1,0 +1,14 @@
+{% extends 'APYDataGridBundle::blocks.html.twig' %}
+
+
+{% block grid_column_price_cell %}
+   {{ value }}
+{% endblock grid_column_price_cell %}
+
+{% block grid_column_name_cell %}
+   {{ value }}
+{% endblock grid_column_name_cell %}
+
+{% block grid_column_picture_cell %}
+    <img width="55" src="{{ value }}" />
+{% endblock grid_column_picture_cell %}

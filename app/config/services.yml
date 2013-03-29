@@ -1,0 +1,56 @@
+services:
+    magazento_user:
+        class: Magazento\UserBundle\EventListener\MainListener
+        arguments: [@security.context,@router,@doctrine.odm.mongodb.document_manager,@service_container]
+        tags:
+            - { name: kernel.event_subscriber }
+    magazento_build_xml:
+        class: Magazento\ServiceBundle\Model\BuildXml
+        arguments: [@security.context,@doctrine.odm.mongodb.document_manager,@service_container]
+    magazento_settings:
+        class: Magazento\ServiceBundle\Model\SettingsStatus
+        arguments: [@security.context,@doctrine.odm.mongodb.document_manager,@service_container]
+    magazento_build_iphone:
+        class: Magazento\ServiceBundle\Model\BuildIphone
+        arguments: [@security.context,@doctrine.odm.mongodb.document_manager,@service_container]
+    magazento_catalog:
+        class: Magazento\ServiceBundle\Model\Catalog
+        arguments: [@security.context,@doctrine.odm.mongodb.document_manager,@service_container,@session,]              
+    magazento_settings:
+        class: Magazento\ServiceBundle\Model\Settings
+        arguments: [@security.context,@doctrine.odm.mongodb.document_manager,@service_container,@session,]      
+    magazento_settings_status:
+        class: Magazento\ServiceBundle\Model\SettingsStatus
+        arguments: [@security.context,@doctrine.odm.mongodb.document_manager,@service_container,@session,]      
+    magazento_console:
+        class: Magazento\ServiceBundle\Model\Console
+        arguments: [@doctrine.odm.mongodb.document_manager,@service_container]      
+    magazento_connection:
+        class: Magazento\ServiceBundle\Model\Connection
+        arguments: [@doctrine.odm.mongodb.document_manager,@service_container]           
+        
+    magazento_certificates:
+        class: Magazento\ServiceBundle\Model\Certificates
+        arguments: [@security.context,@doctrine.odm.mongodb.document_manager,@service_container]             
+    magazento_checkout:
+        class: Magazento\ServiceBundle\Model\Checkout
+        arguments: [@security.context,@doctrine.odm.mongodb.document_manager,@service_container,@templating,@mailer]             
+    magazento_email:
+        class: Magazento\ServiceBundle\Model\Email
+        arguments: [@security.context,@doctrine.odm.mongodb.document_manager,@service_container,@templating,@mailer]          
+    magazento_account:
+        class: Magazento\ServiceBundle\Model\Account
+        arguments: [@security.context,@doctrine.odm.mongodb.document_manager,@service_container,@templating,@mailer]        
+        
+        
+#ADMIN
+    magazento_admin_user:
+        class: Magazento\AdminBundle\Model\User
+        arguments: [@security.context,@doctrine.odm.mongodb.document_manager,@service_container]      
+
+
+
+    magazento_twig:
+        class: Magazento\MenuBundle\Twig\TwigExtension
+        tags:
+            - { name: twig.extension }            

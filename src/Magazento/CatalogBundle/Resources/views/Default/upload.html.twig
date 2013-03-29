@@ -1,0 +1,38 @@
+{% extends 'MagazentoUserBundle::layout.html.twig' %}
+{% block fos_user_content %}
+<section id="title" class="container clearfix">
+
+
+    <!-- Title -->
+    <div class="two-thirds column">
+
+        <h1>Store catalog.</h1>
+        <h2>Here you can upload the list of the products from your store. </h2>
+
+    </div>
+    <!-- End Title -->
+
+
+</section>
+<section id="title" style="padding-top: 0" class="container clearfix">
+<div class="two-thirds column">
+    <form class="widthform" action="{{ path('_magazento_catalog_upload') }}" method="post" {{ form_enctype(form) }}>
+        <fieldset>
+                    {{ form_widget(form) }}
+        </fieldset>
+        <div class="form-click">
+            <span><input type="submit" name="submit" value="Send" id="submit"></span>
+        </div>        
+    </form>
+    <!-- End Form -->
+    <div id="alert"></div>
+</div>
+<div class="one-third column">
+    <div id="infobox" class="four columns clearfix">
+        <div class="infobox">
+             Notice. Your current products & catagories will be overwritten with new catalog data from XML
+        </div>
+    </div>        
+</div> 
+</section>
+{% endblock %}

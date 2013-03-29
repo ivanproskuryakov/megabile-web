@@ -1,0 +1,13 @@
+<section id="title" style="padding-bottom: 10px;" class="container clearfix">
+
+        <h1>Reset password</h1>
+        <h2>Enter a new password. Your new password must be between 6 and 20 characters long, and must include at least one number and one letter. Enter the password a second time.</h2>
+</section>
+<div class="two-thirds column">
+    <form  class="widthform" action="{{ path('fos_user_resetting_reset', {'token': token}) }}" {{ form_enctype(form) }} method="POST" class="fos_user_resetting_reset">
+        {{ form_widget(form) }}
+        <div class="form-click">
+            <input type="submit" value="{{ 'resetting.reset.submit'|trans({}, 'FOSUserBundle') }}" />
+        </div>
+    </form>        
+</div>

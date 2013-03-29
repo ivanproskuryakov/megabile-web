@@ -1,0 +1,53 @@
+{# src/Acme/BlogBundle/Resources/views/layout.html.twig #}
+{% extends '::base.html.twig' %}
+{% block body %}
+<section id="title" class="container clearfix" style="padding-bottom:0px;">
+	
+        <div class="fourteen columns">
+            <h1>Android Application</h1>
+            <h2>Thinking about Android? Great news! Android version will be available this summer!</h2>
+        </div>
+</section>
+<section id="title"  class="container clearfix">
+    <div class="feature clearfix">
+        <div class="ten columns">
+            <div style="margin-top:50px;" class="nine columns">
+                <h2>Deadline: Summer 2013! </h2>      
+                <p> We working hard and with a big passsing to make Android Application available for our clents in the end of this spring. It will have exact the same fuctionality as iPhone App. 
+                    Application will work with mobile phones on Android 2.3 and higher.</p>
+            </div>    
+        </div>    
+        <div class="six columns">
+            <img style="float:right" src="{{ asset('images/android.png') }}"/>
+        </div>    
+    </div>   
+        
+    <br class="clear"/>
+    <br class="clear"/>
+    <div class="one-third column">
+        <p class="text">
+            <h2> Android application</h2>
+            The Megabile is an extrememly easy way for creating, reviewing and submitting your store to the Google Play Android Market. 
+            No programming experience is required - just a few clicks and you have got your own Android Application working. 
+        </p>        
+    </div>          
+    <div class="one-third column">
+        <p class="text">
+            <h2> Up to 100 Products is FREE</h2>
+            Up to 100 Products is FREE! It is a winning situation for small stores and start-ups, that can push your stores out of the crowd! That is always easy for you to upgrade or downgrade your billing plan in the billing section
+        </p>         
+    </div>    
+    <div class="one-third column">
+        <p class="text">
+            <h2>New Features and Upgrades</h2>
+We focused on our apps, we always think what about what alse can we implement in our software - all this you get for without any extra payments. Send us a message using our contact form if you have a feedback or a fresh idea to implement!
+        </p>
+    </div>     
+    <div class="contentInfoBox pricing">
+        <p> 
+            <a style="width: 400px;float: right;" class="colorButton" href="{{ asset('/contact')}}"><span class="pointer">YES! I want to send a meessage!</span></a> 
+            <span style="margin-top: 10px; float: left; margin-left: 50px;">Let us know that you really need it. Send us your <strong>THOUGHTS</strong>! </span>
+        </p>
+    </div>  
+</section>
+{% endblock %}

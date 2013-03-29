@@ -1,0 +1,157 @@
+{% extends 'MagazentoUserBundle::layout.html.twig' %}
+{% block fos_user_content %}
+<section id="title" style="padding-bottom: 10px;"  class="container clearfix">
+    <div class="ten columns">
+
+        <h1>Settings</h1>
+        <h2>Main settings page. All application settings are listed here.
+        </h2>
+
+    </div>
+    <!-- 
+    <div id="infobox" class="six columns clearfix">
+        <div class="infobox">
+            <p> Provisioning & Certification for iPhone</p>             
+            <p> Your App Identifier : <strong>com.magazento.{{(app.user.username)}}</strong></p>             
+            <a class="button" href="{{ path('_magazento_settings_apple') }}">Upload Certificates</a> 
+        </div><br/>
+    </div>     
+    -->   
+</section>
+<section id="title" style="padding-top: 0;" class="container clearfix">
+
+
+    <div id="tabs" class="sixteen columns clearfix">
+        <ul>
+            <li class="active"><a href="#tab-apple">General</a></li>
+            <li class=""><a href="#tab-translation">Translation</a></li>
+            <li class=""><a href="#tab-1">Company Information</a></li>
+
+        </ul>
+        <div id="tab-apple" style="display: block;">
+        </div>
+        <div id="tab-apple" style="display: block;">
+            <div class="tabcontent">
+                <form class="widthform" name="{{ (formIphoneapp.name)}}" action="{{ path('_magazento_settings') }}" method="post" {{ form_enctype(formIphoneapp) }}>
+                    <div class="rowedit">
+                        <fieldset>
+                            {{ form_widget(formIphoneapp._token) }}
+                                
+                            {{ form_label(formIphoneapp.product_name) }}
+                            {{ form_errors(formIphoneapp.product_name) }}
+                            {{ form_widget(formIphoneapp.product_name) }}
+                                
+                                
+<!-- ICON -->                                
+                            <div class="form_image_upload">
+                                {{ form_widget(formIphoneapp.icon) }}
+                                <div class="form_errors">
+                                    {{ form_errors(formIphoneapp.icon) }}
+                                </div>    
+                            </div>    
+                            <div class="form_image">    
+                                {{ form_label(formIphoneapp.icon) }}                                
+                                <img width="72" height="72" src="{{ images.icon }}">
+                            </div>
+                            <br class="clear"/>
+                               
+<!-- ICON RETINA -->                                        
+                            <div class="form_image_upload">                     
+                                {{ form_widget(formIphoneapp.icon_retina) }}
+                                <div class="form_errors">
+                                    {{ form_errors(formIphoneapp.icon_retina) }}
+                                </div>                                   
+                            </div>      
+                            <div class="form_image">    
+                                {{ form_label(formIphoneapp.icon_retina) }}                                    
+                                <img width="72" height="72" src="{{ images.icon_retina }}">
+                            </div>
+                            <br class="clear"/>    
+<!-- SPLASH  -->      
+                            <div class="form_image_upload">             
+                                {{ form_widget(formIphoneapp.default) }}
+                                <div class="form_errors">
+                                    {{ form_errors(formIphoneapp.default) }}
+                                </div>                                   
+                            </div>      
+                            <div class="form_image">    
+                                {{ form_label(formIphoneapp.default) }}                                        
+                                <img width="100"  src="{{ images.default }}">
+                            </div>
+                            <br class="clear"/>
+                            <br class="clear"/>
+                                
+<!-- SPLASH RETINA  -->      
+                            <div class="form_image_upload">          
+                                {{ form_widget(formIphoneapp.default_retina) }}
+                                <div class="form_errors">
+                                    {{ form_errors(formIphoneapp.default_retina) }}                                    
+                                </div>                                   
+                            </div>      
+                            <div class="form_image">    
+                                {{ form_label(formIphoneapp.default_retina) }}                                      
+                                <img width="100"  src="{{ images.default_retina }}">
+                            </div>
+                            <br class="clear"/>
+                            <br class="clear"/>
+                            
+<!-- SPLASH RETINA 5 -->          
+                            <div class="form_image_upload">           
+                                {{ form_widget(formIphoneapp.default_retina_568h) }}
+                                <div class="form_errors">
+                                    {{ form_errors(formIphoneapp.default_retina_568h) }}
+                                </div>                                   
+                            </div>      
+                            <div class="form_image">      
+                                {{ form_label(formIphoneapp.default_retina_568h) }} 
+                                <img width="100"  src="{{ images.default_retina_568h }}">
+                            </div>
+                            <br class="clear"/>
+                            <br class="clear"/>                            
+                                                                
+                        </fieldset>
+                        <div class="form-click">
+                            <span><input type="submit" name="submit" value="Save" id="submit"></span>
+                        </div>        
+                    </div>        
+                </form>
+                <br style="clear: both"/>
+            </div>
+        </div>
+        <div id="tab-translation" style="display: block;">
+            <div class="tabcontent">
+                <form class="widthform" name="{{ (formIphoneTranslation.name)}}" action="{{ path('_magazento_settings') }}" method="post" {{ form_enctype(formIphoneTranslation) }}>
+                    <div class="rowedit">
+                        {% for translation in translationData %}
+                            <div>
+                                <label class="required">{{ translation.key }}</label>
+                                <input type="text" name="iphoneTranslation[{{ translation.id }}]" required="required" value="{{ translation.value }}">
+                            </div>                       
+                        {% endfor %}                       
+                        <div class="form-click">
+                            <span><input type="submit" name="submit" value="Save" id="submit"></span>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div id="tab-1" style="display: block;">
+            <div class="tabcontent">
+                <form class="widthform" action="{{ path('_magazento_settings') }}" method="post" {{ form_enctype(formCompany) }}>
+                    <div class="rowedit">
+                        <fieldset>
+                            {{ form_widget(formCompany) }}
+                        </fieldset>
+                        <div class="form-click">
+                            <span><input type="submit" name="submit" value="Save" id="submit"></span>
+                        </div>        
+                    </div>        
+                </form>
+                <div id="alert"></div>                
+            </div>            
+        </div>
+    </div>    
+
+</section>        
+
+{% endblock %}

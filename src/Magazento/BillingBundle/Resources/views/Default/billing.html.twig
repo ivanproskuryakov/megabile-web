@@ -1,0 +1,46 @@
+{% extends 'MagazentoUserBundle::layout.html.twig' %}
+{% block fos_user_content %}
+<section id="title" class="container clearfix">
+    <div class="six columns">
+        <h1>Billing & Payments</h1>
+        <div class="infobox">
+            <p>No extra or hidden fees.</p>
+            <p>If your ballance will be less than monthly price your plan will be automatically switched to FREE</p>
+        </div>
+    </div>
+       
+    <div class="six columns">
+        <form class="widthform " action="{{ path('_magazento_billing_changeplan') }}" method="post" {{ form_enctype(plan_form) }}>
+            <fieldset class="radio">
+                {{ form_widget(plan_form) }}
+            </fieldset>
+            <div class="form-click">
+                <span><input type="submit" name="submit" value="Change billing plan" id="submit"></span>
+            </div>        
+        </form>
+    </div> 
+    <div class="four columns">
+        <form class="widthform" action="{{ path('_magazento_billing_payment_send') }}" method="post" {{ form_enctype(pay_form) }}>
+            <fieldset>
+                {{ form_widget(pay_form) }}
+            </fieldset>
+            <div class="form-click">
+                <span><input type="submit" name="submit" value="Process to checkout" id="submit"></span>
+            </div>        
+        </form>
+    </div> 
+        
+</section>
+
+
+
+
+<section id="title-category" class="container clearfix">
+    <div class="datagrid-container hideheader">
+        {% if grid  != false %}
+            {{ grid(grid) }}
+        {% endif %}        
+
+    </div>        
+</section>
+{% endblock %}

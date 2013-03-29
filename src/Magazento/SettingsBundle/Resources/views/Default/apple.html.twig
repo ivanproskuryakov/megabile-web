@@ -1,0 +1,65 @@
+{% extends 'MagazentoUserBundle::layout.html.twig' %}
+{% block fos_user_content %}
+
+<section id="title" style="padding-bottom: 20px;" class="container clearfix">
+    <div class="eight columns">
+        <h1>Provisioning & Certification</h1>
+        <h2>Ceritifcates are required for signing the resource code of your Megabile application and for uploading it to AppleStore.</h2>
+    </div>
+    <div class="eight columns">
+        <div id="infobox" class="clearfix">
+            <div class="infobox">
+                <p><span>Your App Identifier:</span> <strong>com.magazento.{{(app.user.username)}}</strong></p>
+                <p>To get your certificates register you need apple developer account </p>
+                <a target="blank" class="button" href="https://developer.apple.com/">developer.apple.com</a>
+            </div>
+
+        </div>        
+    </div> 
+
+</section>
+
+<section id="title" class="container clearfix">
+        <div class="eight columns">
+            <form class="seven columns widthform" action="{{ path('_magazento_settings_apple') }}" method="post" {{ form_enctype(formDev) }}>      
+                <div class="identity">
+                    <span>status: {{ (cerDev) }}</span>
+                </div>                
+                <h3> For testing on iPhone device</h3>
+                <fieldset>
+                        {{ form_widget(formDev._token) }}
+
+                        {{ form_row(formDev.type) }}
+                        {{ form_row(formDev.password) }}
+                        {{ form_row(formDev.p12) }}
+                        {{ form_row(formDev.mobileprovision) }}
+                </fieldset>
+                <div class="form-click">
+                    <span><input type="submit" name="submit" value="Upload & Install" id="submit"></span>
+                </div>                 
+            </form>                         
+        </div>
+        <div class="eight columns">
+            <form class="seven columns widthform" action="{{ path('_magazento_settings_apple') }}" method="post" {{ form_enctype(formProd) }}>    
+                <div class="identity">
+                    <span>status: {{ (cerProd) }}</span>
+                </div>
+                <h3> For iTunes distribution</h3>
+                <fieldset>
+                        {{ form_widget(formProd._token) }}
+
+                        {{ form_row(formProd.type) }}                        
+                        {{ form_row(formProd.password) }}
+                        {{ form_row(formProd.p12) }}
+                        {{ form_row(formProd.mobileprovision) }}
+                </fieldset>
+                <div class="form-click">
+                    <span><input type="submit" name="submit" value="Upload & Install" id="submit"></span>
+                </div> 
+            </form>                         
+        </div>
+</section>  
+
+
+
+{% endblock %}

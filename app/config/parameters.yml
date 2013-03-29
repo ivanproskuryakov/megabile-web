@@ -1,0 +1,18 @@
+parameters:
+    locale:            en
+    secret:            ThisTokenIsNotSoSecretChangeIt
+    uploads_secure_directory: %kernel.root_dir%/uploads
+    server: http://198.206.133.73
+    
+#PARAMS
+    defaults_dir: %kernel.root_dir%/defaults
+    api_url_store: http://www.megabile.com/api
+    
+#EMAIL
+    email_contact: volgodark@gmail.com
+    email_noreply: noreply@megabile.com
+    
+#2CO
+    2co_sid: 1477959
+    2co_secret: dark
+    2co_gateway: https://www.2checkout.com/checkout/purchase

@@ -1,0 +1,32 @@
+<section id="title" class="container clearfix">
+    <div class="ten columns">
+
+        <h1>Registration.</h1>
+        <h2>In order to get the full-functional access to our service, you have to fill in all the  required fields.</h2>
+
+    </div>
+</section>
+<section id="title" class="container clearfix">
+    <div class="two-thirds column">
+        <form class="widthform" action="{{ path('fos_user_registration_register') }}" {{ form_enctype(form) }}  method="POST" class="fos_user_registration_register">
+
+            <fieldset>
+                {{ form_widget(form) }}
+            </fieldset>
+            <div class="form-click">
+                <input type="submit" value="{{ 'registration.submit'|trans({}, 'FOSUserBundle') }}" />
+            </div>        
+        </form>
+
+        <div id="alert"></div>
+    </div>
+    <div class="one-third column">
+        <div id="infobox" class="four columns clearfix">
+            <div class="infobox">
+                In order to create an account we will send you a confirmation letter to your e-mail. Once this step will be done your account will be created.
+                <a class="button" href="{{asset('/login')}}">Already Registered!</a>
+            </div>
+        </div>        
+    </div>         
+</section>        
+    

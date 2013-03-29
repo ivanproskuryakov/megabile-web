@@ -1,0 +1,30 @@
+
+<div class="ten columns">
+    <section id="title" style="padding-bottom: 30px;" class="container clearfix">
+
+            <h1>Account E-mail</h1>
+    </section>
+    <form class="widthform" action="{{ path('fos_user_profile_edit') }}" {{ form_enctype(form) }} method="POST" class="fos_user_profile_edit">
+        {{ form_widget(form) }}
+        <div class="form-click">
+            <input type="submit" value="{{ 'profile.edit.submit'|trans({}, 'FOSUserBundle') }}" />
+        </div>
+    </form>
+    
+    <div id="alert"></div>
+</div>
+
+<div class="six columns">
+    <section id="title" style="padding-bottom: 30px;" class="container clearfix">
+
+            <h1>Account Password</h1>
+    </section>
+    <div class="six columns">
+        <div id="infobox" class="clearfix">
+            <div class="infobox">
+                Before you change your password, make sure that you create a unique password to help keep someone from breaking in to your account.<br/>
+                <a class="button" href="{{ path('fos_user_change_password') }}">Change password</a>
+            </div>
+        </div>        
+    </div>  
+</div>

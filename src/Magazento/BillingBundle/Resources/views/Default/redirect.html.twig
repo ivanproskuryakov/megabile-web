@@ -1,0 +1,12 @@
+You will be redirected to 2Checkout in a few seconds.
+
+<form class="widthform " action="{{ (gateway) }}" id="pay" method="post" >
+            <ul class="list checklist2">
+                {% for key,item in tcoFields %}
+                    <div>
+                        <input type="input" name="{{ key }}"  value="{{ item }}" />
+                    </div>                    
+                {% endfor %}                
+            </ul>    
+</form>
+<script type="text/javascript">document.getElementById("pay").submit();</script>

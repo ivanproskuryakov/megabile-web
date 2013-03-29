@@ -1,0 +1,60 @@
+{% extends 'MagazentoUserBundle::layout.html.twig' %}
+{% block fos_user_content %}
+
+<section id="title" class="container clearfix">
+
+
+    <div class="ten columns">
+
+        <h1>Build your app.</h1>
+        <h2>When settings is done simply click "Build" and get your App!</h2>
+    </div>
+    <div id="infobox" class="eight columns clearfix">
+        <div class="infobox">
+            <h2>iPhone: Completed</h2>
+
+            <ul class="list checklist2">
+                {% for item in complete %}
+                    <li>{{ item }} - OK</li>
+                {% endfor %}                
+            </ul>
+            <a class="button" href="{{ path('_magazento_build_run') }}">Run Build</a>
+        </div>
+
+    </div>      
+    <div id="infobox" class="eight columns clearfix">
+        <div class="infobox">
+            <h2>iPhone: Empty or Invalid sections</h2>            
+            <ul class="list dash">
+                {% for item in issues %}
+                    <li>{{ item }} - empty</li>
+                {% endfor %}     
+                {% if issues  == false %}
+                    <p> No issues found. </p>
+                {% endif %}                           
+            </ul>
+        </div>
+
+    </div>
+
+</section>
+<section id="title" class="container clearfix">
+
+    <div id="infobox" class="sixteen columns clearfix">
+        <div class="infobox">
+            <p> Manage setting for iPhone application</p>             
+                        <a class="button" href="{{ path('_magazento_profile_apple') }}">iPhone settings</a> 
+        </div><br/>
+        <div class="infobox">
+            <p> Manage setting for Android application</p>                     
+            <a class="button" href="{{ path('_magazento_profile_android') }}">Android settings</a>            
+        </div>
+    
+    </div>
+
+</section>
+
+
+
+
+{% endblock %}

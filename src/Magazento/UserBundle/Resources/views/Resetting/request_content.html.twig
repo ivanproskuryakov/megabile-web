@@ -1,0 +1,21 @@
+<section id="title" style="padding-bottom: 10px;" class="container clearfix">
+
+        <h1>Reset password</h1>
+        <h2>
+Just submit your email address here, we will email you a temporary password. You will be asked to choose a new permanent password when you next log in.</h2>
+</section>
+<div class="two-thirds column">
+    <form class="widthform" action="{{ path('fos_user_resetting_send_email') }}" method="POST" class="fos_user_resetting_request">
+        <div>
+            {% if invalid_username is defined %}
+                <p>{{ 'resetting.request.invalid_username'|trans({'%username%': invalid_username}, 'FOSUserBundle') }}</p>
+            {% endif %}
+            <label for="username">{{ 'resetting.request.username'|trans({}, 'FOSUserBundle') }}</label>
+            <input type="text" id="username" name="username" required="required" />
+        </div>
+        <div class="form-click">
+            <input type="submit" value="{{ 'resetting.request.submit'|trans({}, 'FOSUserBundle') }}" />
+        </div>
+    </form>
+</div>
+

@@ -1,0 +1,13 @@
+{# src/Acme/BlogBundle/Resources/views/layout.html.twig #}
+{% extends '::admin.html.twig' %}
+{% block body %}
+<style>
+.grid-column-log{
+    text-align: left;
+}
+</style>
+<div class="datagrid-container">
+    {{ grid(grid,'MagazentoCatalogBundle:Default:grid_product_render.html.twig') }}
+</div>        
+{% endblock %}
+

@@ -1,0 +1,45 @@
+{% extends 'MagazentoUserBundle::layout.html.twig' %}
+{% block fos_user_content %}
+<section id="title" style="padding-bottom: 0;" class="container clearfix">
+    <!-- Title -->
+    <div class="twelve columns">
+
+        <h1>Categories</h1>
+        <h2>Your store catalog are listed below.</h2>
+        <h2>Please check your catalog for unnecessary or extra nodes.</h2>
+
+    </div>
+
+    <div class="four columns">
+        <form class="widthform" action="{{ path('_magazento_catalog_upload') }}" method="post" {{ form_enctype(form) }}>
+            <fieldset>
+                        {{ form_widget(form) }}
+            </fieldset>
+            <div class="form-click">
+                <span><input type="submit" name="submit" value="Send" id="submit"></span>
+            </div>        
+        </form>
+        <!-- End Form -->
+        <div id="alert"></div>
+    </div>    
+</section>
+
+<section id="title"  class="container clearfix">
+
+	<table title="Category tree" class="easyui-treegrid" style=""
+			data-options="
+				url: '{{ path('_magazento_catalog_categoryjson') }}',
+				rownumbers: false,
+				idField: 'id',
+				treeField: 'name',
+			">
+		<thead>
+			<tr>
+				<th data-options="field:'id'" width="50px">Id</th>
+				<th data-options="field:'name'" width="870px">Name</th>
+			</tr>
+		</thead>
+	</table>
+    
+</section>
+{% endblock %}

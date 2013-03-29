@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        {% include '::head.html.twig' %}        
+    </head>
+    <body>
+        <div class="header-wrapper">
+            <header class="container clearfix">
+                <img class="logo" src="{{ asset("logo.png")}}">
+                <nav id="nav" class="navigation nine columns clearfix">
+                    {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+                        <ul id="navigation">
+                            {{ knp_menu_render('MagazentoMenuBundle:Builder:registeredMenu') }}
+                        </ul>
+                    {% else %}
+                        <ul id="navigation">
+                            {{ knp_menu_render('MagazentoMenuBundle:Builder:unregisteredMenu') }}
+                        </ul>
+                    {% endif %}
+                </nav>
+                <nav id="nav" class="user five columns clearfix">
+                    {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+                        <div class="user-wrapper"> 
+                            <ul id="navigation">
+                                <li class="drop"><span class="userinfo"> {{(app.user.username)}} </span>
+                                    <ul class="dropdown clearfix menu_level_1">
+                                        <div class="userdropdown">  
+                                            <p class="usermoney useritem"> <strong>{{(app.user.money)}} USD : {{(app.user.plan)}}</strong> <br/> ballance </p>                                            
+                                            <p class="usermoney useritem"> <strong>{{(app.user.moneyReserved)}} USD</strong> <br/> reserved </p>                                            
+                                            <p class="userdate useritem"> <strong>{{ (app.user.payDate)|date }}</strong><br/> Billing starts </p>                                            
+                                            <p class="usersettigns useritem"> <a href="{{ path('fos_user_profile_edit') }}"> edit profile</a></p>
+                                        </div>
+                                    </ul>
+                                    
+                                </li>
+                                <li class="userlogout"><a href="{{ path('fos_user_security_logout') }}"> # </a></li>
+                            </ul>                            
+                        </div>                       
+                    {% else %}
+                        <div class="user-wrapper">         
+                            <ul id="navigation">
+                                <li class="userlogin"><a href="{{ path('fos_user_security_login') }}">{{ 'layout.login'|trans({}, 'FOSUserBundle') }}</a></li>
+                                <li class="userregister"><a href="{{ asset('/register') }}">{{ 'layout.register'|trans({}, 'FOSUserBundle') }}</a></li>
+                            </ul>
+                        </div>                
+                    {% endif %}
+
+                </nav>
+            </header>               
+        </div>
+            
+        <div class="container-wrapper">
+            <div class="container">
+
+                {% if app.session.hasFlash('notice') %}
+                <br/>
+                <p class="alert info"><span>{{ app.session.flash('notice') }}</span></p>
+                {% endif %}        
+
+                {% block body %}{% endblock %}            
+            </div>
+        </div>
+            
+
+        {% block javascripts %}{% endblock %}
+            
+        <section id="services">
+
+                <div class="container clearfix">
+                        <!-- Intro -->
+                        <div class="sixteen columns">
+                                <h2>See what we can do.</h2>
+                        </div>
+                        <!-- End Intro -->
+
+                        <div class="list-one one-third column">
+                                <h4>Mobile e-commerce</h4>
+                                <ul>
+                                        <li>iPhone & Android apps<li>
+                                        <li>Magento </li>
+                                        <li>Prestashop </li>
+                                        <li>Shopify </li>
+                                </ul>
+                        </div>
+
+                        <div class="list-two one-third column">
+                                <h4>Websites</h4>
+                                <p>As a company, we provide a wide range of services related to the website development<br/>
+                                Megabile is a child project of Magazento company, to read more visit magazento.com  </p>                                
+                        </div>
+
+                        <div class="list-three one-third column">
+                                <h4>About Magabile</h4>
+                                <p>We think that if you have a feedback or you have found issues in our software then you should definitely speak to us.<br/>
+                                We're a friendly, skilled team always prepared to help.</p>
+                        </div>
+
+                </div><!-- END CONTAINER -->
+
+        </section>   
+        {% if is_granted("IS_AUTHENTICATED_REMEMBERED") == false %}            
+            <section id="call-to-action">
+                <div class="container clearfix">
+                    <div class="sixteen columns">
+                        <h1>Not enough?</h1>
+                        <h2>Maybe you want to see our Wiki.</h2>
+                        <a class="button dark" href="http://wiki.megabile.com">Yes, show me</a>
+                    </div>
+                </div>
+            </section> 
+        {% else %}
+            <section id="call-to-action">
+                <div class="container clearfix">
+                    <div class="sixteen columns">
+                        <h1>Got feedback?</h1>
+                        <h2>Help us to make Magabile better!</h2> 
+                       <a class="button dark" href="{{ asset('/contact')}}">I would love to</a>
+                    </div>
+                </div>
+            </section>                 
+        {% endif %}        
+           
+            
+        {% include '::footer.html.twig' %}
+    </body>
+</html>
+

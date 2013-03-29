@@ -1,0 +1,31 @@
+{% extends 'MagazentoUserBundle::layout.html.twig' %}
+{% block fos_user_content %}
+<section id="title" style="padding-bottom: 0;" class="container clearfix">
+    <!-- Title -->
+    <div class="twelve columns">
+
+        <h1>Products & Categories</h1>
+        <h2>Your store catalog are listed below</h2>
+
+    </div>
+
+    <div class="four columns">
+        <form class="widthform" action="{{ path('_magazento_catalog_upload') }}" method="post" {{ form_enctype(form) }}>
+            <fieldset>
+                        {{ form_widget(form) }}
+            </fieldset>
+            <div class="form-click">
+                <span><input type="submit" name="submit" value="Send" id="submit"></span>
+            </div>        
+        </form>
+        <!-- End Form -->
+        <div id="alert"></div>
+    </div>    
+</section>
+
+<section id="blog" class="content">
+    <div class="datagrid-container hideheader">
+        {{ grid(grid,'MagazentoCatalogBundle:Default:grid_product_render.html.twig') }}
+    </div>    
+</section>
+{% endblock %}

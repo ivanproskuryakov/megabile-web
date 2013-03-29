@@ -1,0 +1,75 @@
+{# src/Acme/BlogBundle/Resources/views/layout.html.twig #}
+{% extends '::base.html.twig' %}
+{% block body %}
+<section id="title" class="container clearfix" style="padding-bottom:10px;">
+	
+        <div class="twelve columns">
+
+                <h1>How It Works.</h1>
+                <h2>Best of all, the Megabile requires absolutely no programming experience — and you don’t even need a mobile device to do it! </h2>
+        </div>
+</section>
+<section id="title" class="container clearfix">
+    <div class="feature clearfix">
+        <div class="ten columns">
+            <h2>Upload Data</h2>
+            <p>In order to integrate your store you will need to upload your existing store products and categories to our server.
+            We offer ready-made solutions for leading eCommerce platforms such as Magento, Prestashop and Joomla Virtuemart.</p>
+        </div>    
+        <div class="five columns">
+            <img class="icon-right" src="{{ asset('images/icon-1.png') }}"/>
+        </div>    
+    </div>    
+    <div class="feature clearfix">
+        <div class="five columns">
+            <img class="icon-left" src="{{ asset('images/icon-2.png') }}"/>
+        </div>         
+        <div class="ten columns">
+            <h2>Settings</h2>
+            <p>Customize your app's icons, splash screens. Change store & company information as well as the information realed to order processing. Integrate the translation of your required language into your app.</p>
+        </div>    
+    </div>       
+    <div class="feature clearfix">
+        <div class="ten columns">
+            <h2>Build App</h2>      
+            <p>Build a test realease and test your App on your own devices before publish you app. Once all testes is done you simply make a distribution release and publish the App.  Read more about it in our Wiki.</p>
+        </div>    
+        <div class="five columns">
+            <img class="icon-right" src="{{ asset('images/icon-3.png') }}"/>
+        </div>    
+    </div>    
+        
+    <br class="clear"/>
+    <br class="clear"/>
+    <div class="one-third column">
+        <p class="text">
+            <h2>Apple Developer Account</h2>
+            In Megabile we glad to provide you the simpliest way for pulishing your store on iPhone, already customized for  your brand. 
+            Just make several clicks following our instructions and you will got how to create and submit your application 
+            to the Apple App Store with the use of The Megabile.
+        </p>        
+    </div>   
+    <div class="one-third column">
+        <p class="text">
+            <h2>Test Before Distribute</h2>
+            In Megabile we glad to provide you the simpliest way for pulishing your store on iPhone, already customized for  your brand. 
+            Just make several clicks following our instructions and you will got how to create and submit your application 
+            to the Apple App Store with the use of The Megabile.
+        </p>
+    </div>    
+    <div class="one-third column">
+        <p class="text">
+            <h2>Integrations With Custom Stores </h2>
+            In Megabile we glad to provide you the simpliest way for pulishing your store on iPhone, already customized for  your brand. 
+            Just make several clicks following our instructions and you will got how to create and submit your application 
+            to the Apple App Store with the use of The Megabile.
+        </p>         
+    </div>     
+    <div class="contentInfoBox pricing">
+        <p> 
+            <a style="width: 400px;float: left;" class="colorButton" href="{{ asset('/register')}}"><span class="pointer">Get Started for FREE!</span></a> 
+            <span style="margin-top: 10px; float: left; margin-left: 50px;">Note: you always able to switch your plan in <strong>BILLING</strong> section!</span>
+        </p>
+    </div>  
+</section>
+{% endblock %}

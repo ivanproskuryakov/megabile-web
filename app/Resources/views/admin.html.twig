@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>{% block title %}Magazento.Mobile - admin {% endblock %}</title>
+        {% block stylesheets %}{% endblock %}
+        <link href="{{ asset('css/style.css') }}" rel="stylesheet" type="text/css" />        
+	
+	<script>if((window.devicePixelRatio===undefined?1:window.devicePixelRatio)>1)
+		document.cookie='HTTP_IS_RETINA=1;path=/';</script>
+	<link href='http://fonts.googleapis.com/css?family=Lato:300,400,900' rel='stylesheet' type='text/css'>
+	<link rel="shortcut icon" type="image/x-icon"  href="{{ asset('favicon.ico') }}">
+	<link rel="apple-touch-icon" href="{{ asset('apple-touch-icon.png') }}">
+	<link rel="apple-touch-icon" sizes="72x72" href="{{ asset('apple-touch-icon-72x72.png') }}">
+	<link rel="apple-touch-icon" sizes="114x114" href="{{ asset('apple-touch-icon-114x114.png') }}">
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+	<script src="{{ asset('js/custom.js') }}" type="text/javascript"></script>
+    </head>
+    <body>
+        <div class="header-wrapper">
+            <header class="container clearfix">
+                <nav id="nav" class="sixteen columns clearfix">
+                        <ul id="navigation">
+                            <li><a href="{{ asset('/admin/history')}}">History</a></li>
+                            <li><a href="{{ asset('/admin/user')}}">User</a></li>
+                        </ul>
+                </nav>
+            </header>               
+        </div>        
+        <div class="container-wrapper">
+
+                {% if app.session.hasFlash('notice') %}
+                <br/>
+                <p class="alert notice"><strong>Notice</strong> <span>- {{ app.session.flash('notice') }}</span></p>
+                {% endif %}        
+
+                {% block body %}{% endblock %}            
+        </div>
+    </body>
+</html>
