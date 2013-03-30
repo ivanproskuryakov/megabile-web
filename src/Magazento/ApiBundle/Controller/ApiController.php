@@ -11,9 +11,9 @@ use Magazento\BillingBundle\Model\BillingPlan;
 class ApiController extends Controller
 {
     /**
-     * @Route("/api/storeinfo/{user_id}/{user_api}/")
+     * @Route("/api/storeinfo/{username}/{user_api}/")
      */
-    public function storeInfoAction($user_id,$user_api)
+    public function storeInfoAction($username,$user_api)
     {
         
         if ($this->container->get('magazento_connection')->isConnected() == false )  {
@@ -24,7 +24,7 @@ class ApiController extends Controller
         }
         
         $dm = $this->get('doctrine.odm.mongodb.document_manager');
-        $user = $dm->getRepository('MagazentoUserBundle:User')->findOneBy(array('id' =>$user_id, 'apiKey' =>$user_api));    
+        $user = $dm->getRepository('MagazentoUserBundle:User')->findOneBy(array('username' =>$username, 'apiKey' =>$user_api));    
 
         if ($user == null) {
             $result = array();            
@@ -49,12 +49,12 @@ class ApiController extends Controller
     }
     
     /**
-     * @Route("/api/storecatalog/{user_id}/{user_api}/")
+     * @Route("/api/storecatalog/{username}/{user_api}/")
      */
-    public function storeCatalogAction($user_id,$user_api)
+    public function storeCatalogAction($username,$user_api)
     {
         $dm = $this->get('doctrine.odm.mongodb.document_manager');
-        $usr = $dm->getRepository('MagazentoUserBundle:User')->findOneBy(array('id' =>$user_id, 'apiKey' =>$user_api));    
+        $usr = $dm->getRepository('MagazentoUserBundle:User')->findOneBy(array('username' =>$username, 'apiKey' =>$user_api));    
         if ($usr) {
             
             $zip = $this->container->getParameter('uploads_secure_directory') . '/' . $usr->getUsername() .'/'.'store_catalog.zip';
@@ -75,12 +75,12 @@ class ApiController extends Controller
     }    
     
     /**
-     * @Route("/api/orderemail/{user_id}/{user_api}/")
+     * @Route("/api/orderemail/{username}/{user_api}/")
      */
-    public function orderEmailAction($user_id,$user_api)
+    public function orderEmailAction($username,$user_api)
     {
         $dm = $this->get('doctrine.odm.mongodb.document_manager');
-        $user = $dm->getRepository('MagazentoUserBundle:User')->findOneBy(array('id' =>$user_id, 'apiKey' =>$user_api));    
+        $user = $dm->getRepository('MagazentoUserBundle:User')->findOneBy(array('username' =>$username, 'apiKey' =>$user_api));    
         if ($user) {
                 
             $email_body = $_REQUEST['message'];

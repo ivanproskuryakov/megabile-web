@@ -81,8 +81,8 @@ class BuildIphone {
                 $w->text($api_url);
                 $w->endElement();  
 
-                $w->startElement('userid');
-                $w->text($this->user->getId());
+                $w->startElement('user');
+                $w->text($this->user->getUsername());
                 $w->endElement();
                 
                 $w->startElement('apikey');
