@@ -65,7 +65,7 @@ class Builder extends ContainerAware
             $catalog->addChild('Why Us ?', array('route' => '_magazento_why'));
             $pricing = $menu->addChild('Pricing & Sign up', array('route' => '_magazento_pricing'));     
             $menu->addChild('Wiki', array('uri' => 'http://wiki.megabile.com')); 
-            $menu->addChild('Contact', array('route' => '_magazento_contact')); 
+            $menu->addChild('Free Support', array('route' => '_magazento_contact')); 
             
 //                    ->setAttributes(array(
 //                        'class' => 'drop'

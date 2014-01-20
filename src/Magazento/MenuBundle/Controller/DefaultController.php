@@ -51,14 +51,14 @@ class DefaultController extends Controller
             $form->bind($request);
             if ($form->isValid()) {
                 
-                $emailTo = $this->container->getParameter('email_contact'); 
+                $emailFrom = $this->container->getParameter('email_noreply'); 
                 $body = "From: " . $form->get('email')->getData() . "\r\n" .
                         "Name: " . $form->get('name')->getData() . "\r\n" .
                         "Message: ". $form->get('message')->getData();
                 
                 $message = \Swift_Message::newInstance()
                     ->setSubject('Megabile: Contact Form')
-                    ->setFrom($form->get('email')->getData())
+                    ->setFrom($emailFrom)
                     ->setTo($this->container->getParameter('email_contact'))
                     ->setBody($body)
                 ;

@@ -1,0 +1,5 @@
+_assetic:
+    resource: .
+    type: assetic
+_app:
+    resource: /opt/local/apache2/htdocs/megabile.dev/app/config/routing_dev.yml

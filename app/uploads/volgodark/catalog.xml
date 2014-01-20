@@ -1,0 +1,75 @@
+<?xml version="1.0"?><xml date="2013-03-28 08:18"><shop>
+<categories>
+<category id="3" parentId="0" >Root Catalog</category>
+<category id="4" parentId="18" >Shirts</category>
+<category id="5" parentId="18" >Shoes</category>
+<category id="8" parentId="13" >Cell Phones</category>
+<category id="10" parentId="3" >Furniture</category>
+<category id="12" parentId="13" >Cameras</category>
+<category id="13" parentId="3" >Electronics</category>
+<category id="15" parentId="13" >Computers</category>
+<category id="16" parentId="5" >Mens</category>
+<category id="17" parentId="5" >Womens</category>
+<category id="18" parentId="3" >Apparel</category>
+<category id="19" parentId="18" >Hoodies</category>
+<category id="20" parentId="3" >Household Items</category>
+<category id="22" parentId="10" >Living Room</category>
+<category id="23" parentId="10" >Bedroom</category>
+<category id="24" parentId="18" >Pants</category>
+<category id="25" parentId="12" >Accessories</category>
+<category id="26" parentId="12" >Digital Cameras</category>
+<category id="27" parentId="15" >Build Your Own</category>
+<category id="28" parentId="15" >Laptops</category>
+<category id="29" parentId="13" >Hard Drives</category>
+<category id="30" parentId="13" >Monitors</category>
+<category id="31" parentId="13" >RAM / Memory</category>
+<category id="32" parentId="13" >Cases</category>
+<category id="33" parentId="13" >Processors</category>
+<category id="34" parentId="13" >Peripherals</category>
+</categories>
+<offers>
+	<offer id="16" >
+		<url>http://magento17.dev/nokia-2610-phone.html?___store=default</url>
+		<price>149.9900</price>
+		<currencyId>RUR</currencyId>
+		<categoryId>
+		<cid>8</cid>
+		</categoryId>
+		<picture>http://magento17.dev/media/catalog/product/cache/0/image/265x/9df78eab33525d08d6e5fb8d27136e95/n/o/nokia-2610-phone-2.jpg</picture>
+		<name><![CDATA[Nokia 2610 Phone]]></name>
+		<sku>n2610</sku>
+		<description><![CDATA[The Nokia 2610 is an easy to use device that combines multiple messaging options including email, instant messaging, and more. You can even download MP3 ringtones, graphics, and games straight to the phone, or surf the Internet with Cingular's MEdia Net service. It's the perfect complement to Cingular service for those even remotely interested in mobile Web capabilities in an affordable handset.<br><br>
+
+<b>Design</b><br>
+Compact and stylish, the 2610 features a candybar design sporting a bright 128 x 128 pixel display capable of displaying over 65,000 colors. Most of the phone's features and on-screen menus are controlled by a center toggle on the control pad. A standard hands-free headphone jack is provided, as are volume control keys, and there's even a "Go-To" button that can be assigned by the user for quick access to favorite applications. Lastly, the included speakerphone allows you to talk handsfree, and because the phone sports an internal antenna, there's nothing to snag or break off.
+
+\n\nColor: Black<br/>Brand: No<br/>Dimensions: 4.1 x 1.7 x 0.7 inches <br/>Gender: No<br/>SKU: n2610<br/>]]></description>
+</offer>
+	<offer id="17" >
+		<url>http://magento17.dev/blackberry-8100-pearl.html?___store=default</url>
+		<price>349.9900</price>
+		<currencyId>RUR</currencyId>
+		<categoryId>
+		<cid>8</cid>
+		</categoryId>
+		<picture>http://magento17.dev/media/catalog/product/cache/0/image/265x/9df78eab33525d08d6e5fb8d27136e95/b/l/blackberry-8100-pearl-2.jpg</picture>
+		<name><![CDATA[BlackBerry 8100 Pearl]]></name>
+		<sku>bb8100</sku>
+		<description><![CDATA[ Like the BlackBerry 7105t, the BlackBerry 8100 Pearl is 
+The BlackBerry 8100 Pearl sports a large 240 x 260 screen that supports over 65,000 colors-- plenty of real estate to view your e-mails, Web browser content, messaging sessions, and attachments. The venerable BlackBerry trackwheel has been replaced on this model with an innovative four-way trackball placed below the screen. On the rear of the handheld, you'll find a 1.3-megapixel camera and a self portrait mirror. The handheld's microSD memory card slot is located inside the device, behind the battery. There's also a standard 2.5mm headset jack that can be used with the included headset, as well as a mini-USB port for data connectivity.\n\nColor: Silver<br/>Brand: No<br/>Dimensions: 4.2 x 2 x 0.6 inches <br/>Gender: No<br/>SKU: bb8100<br/>]]></description>
+</offer>
+	<offer id="18" >
+		<url>http://magento17.dev/sony-ericsson-w810i.html?___store=default</url>
+		<price>399.9900</price>
+		<currencyId>RUR</currencyId>
+		<categoryId>
+		<cid>8</cid>
+		</categoryId>
+		<picture>http://magento17.dev/media/catalog/product/cache/0/image/265x/9df78eab33525d08d6e5fb8d27136e95/s/o/sony-ericsson-w810i-2.jpg</picture>
+		<name><![CDATA[Sony Ericsson W810i]]></name>
+		<sku>sw810i</sku>
+		<description><![CDATA[The W810i's screen sports 176 x 220 pixel resolution with support for 262,000 colors. Quick access buttons below the screen make it easy to control the phone's Walkman music features, while a five-way center button controls most of the phone's menus and features.\n\nColor: Black<br/>Brand: No<br/>Dimensions:  3.5 x 1.8 x 1 inches<br/>Gender: No<br/>SKU: sw810i<br/>]]></description>
+</offer>
+</offers>
+</shop>
+</xml>

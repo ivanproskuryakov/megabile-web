@@ -1,3 +1,4 @@
-/app/cache/
-/app/logs/
-/app/uploads/
+public/app/cache/
+public/app/logs/
+public/app/uploads/
+public/media/catalog/
